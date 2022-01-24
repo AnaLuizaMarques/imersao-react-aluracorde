@@ -37,7 +37,7 @@ function Title(arg) {
       <Tag>{arg.children}</Tag>
       <style jsx>{`
         ${Tag} {
-          color: ${appConfig.theme.colors.neutrals['000']};
+          color: ${appConfig.theme.colors.neutrals['400']};
           font-size: 24px;
           line-height: 28px;
           font-weight: 700;
@@ -46,16 +46,6 @@ function Title(arg) {
     </>
   )
 }
-/*
-function HomePage() {
-  return (
-    <div>
-      <GlobalStyle />
-      <Title tag="h2">Boas vindas de volta!</Title>
-    </div>
-  )
-}
-*/
 
 export default function PaginaInicial() {
   const username = 'AnaLuizaMarques'
@@ -68,9 +58,8 @@ export default function PaginaInicial() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.primary[500],
           backgroundImage:
-            'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+            'url(https://www.themoviedb.org/t/p/original/LBf1w7Yf544vwrwSwQc4poX6l6.jpg)',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundBlendMode: 'multiply'
@@ -91,7 +80,7 @@ export default function PaginaInicial() {
             padding: '32px',
             margin: '16px',
             boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals[700]
+            backgroundColor: appConfig.theme.colors.neutrals[500]
           }}
         >
           {/* Formulário */}
@@ -107,12 +96,12 @@ export default function PaginaInicial() {
               marginBottom: '32px'
             }}
           >
-            <Title tag="h2">Boas vindas de volta!</Title>
+            <Title tag="h1">Welcome back, Modern Family!</Title>
             <Text
               variant="body3"
               styleSheet={{
-                marginBottom: '32px',
-                color: appConfig.theme.colors.neutrals[300]
+                marginBottom: '0',
+                color: appConfig.theme.colors.neutrals[500]
               }}
             >
               {appConfig.name}
@@ -122,9 +111,9 @@ export default function PaginaInicial() {
               fullWidth
               textFieldColors={{
                 neutral: {
-                  textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  textColor: appConfig.theme.colors.neutrals[100],
+                  mainColor: appConfig.theme.colors.neutrals[100],
+                  mainColorHighlight: appConfig.theme.colors.primary[100],
                   backgroundColor: appConfig.theme.colors.neutrals[800]
                 }
               }}
@@ -134,10 +123,10 @@ export default function PaginaInicial() {
               label="Entrar"
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals['000'],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600]
+                contrastColor: appConfig.theme.colors.neutrals[100],
+                mainColor: appConfig.theme.colors.neutrals[400],
+                mainColorLight: appConfig.theme.colors.primary[100],
+                mainColorStrong: appConfig.theme.colors.primary[100]
               }}
             />
           </Box>
@@ -151,7 +140,7 @@ export default function PaginaInicial() {
               alignItems: 'center',
               maxWidth: '200px',
               padding: '16px',
-              backgroundColor: appConfig.theme.colors.neutrals[800],
+              backgroundColor: appConfig.theme.colors.neutrals[400],
               border: '1px solid',
               borderColor: appConfig.theme.colors.neutrals[999],
               borderRadius: '10px',
@@ -169,8 +158,8 @@ export default function PaginaInicial() {
             <Text
               variant="body4"
               styleSheet={{
-                color: appConfig.theme.colors.neutrals[200],
-                backgroundColor: appConfig.theme.colors.neutrals[900],
+                color: appConfig.theme.colors.neutrals[400],
+                backgroundColor: appConfig.theme.colors.neutrals[800],
                 padding: '3px 10px',
                 borderRadius: '1000px'
               }}
