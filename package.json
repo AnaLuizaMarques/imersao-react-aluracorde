@@ -1,7 +1,6 @@
 {
   "name": "imersao-react",
   "version": "1.0.0",
-  "homepage": "imersao-react-aluracode-um/",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
