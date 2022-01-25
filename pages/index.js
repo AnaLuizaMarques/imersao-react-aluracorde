@@ -1,34 +1,7 @@
 import { Box, Button, Text, TextField, Image } from '@skynexui/components'
 import appConfig from '../config.json'
-
-function GlobalStyle() {
-  return (
-    <style global jsx>{`
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-      }
-      body {
-        font-family: 'Open Sans', sans-serif;
-      }
-      html,
-      body,
-      #__next {
-        min-height: 100vh;
-        display: flex;
-        flex: 1;
-      }
-      #__next {
-        flex: 1;
-      }
-      #__next > * {
-        flex: 1;
-      }
-    `}</style>
-  )
-}
+import React from 'react'
+import { useRouter } from 'next/router'
 
 function Title(arg) {
   const Tag = arg.tag || h1
@@ -48,11 +21,10 @@ function Title(arg) {
 }
 
 export default function PaginaInicial() {
-  const username = 'AnaLuizaMarques'
-
+  const roteamento = useRouter()
+  const [username, setUsername] = React.useState('AnaLuizaMarques')
   return (
     <>
-      <GlobalStyle />
       <Box
         styleSheet={{
           display: 'flex',
@@ -86,6 +58,10 @@ export default function PaginaInicial() {
           {/* Formulário */}
           <Box
             as="form"
+            onSubmit={infoDoEvento => {
+              infoDoEvento.preventDefault()
+              roteamento.push('/chat')
+            }}
             styleSheet={{
               display: 'flex',
               flexDirection: 'column',
@@ -100,24 +76,33 @@ export default function PaginaInicial() {
             <Text
               variant="body3"
               styleSheet={{
-                marginBottom: '0',
-                color: appConfig.theme.colors.neutrals[500]
+                marginBottom: '32px',
+                color: appConfig.theme.colors.neutrals[400]
               }}
             >
               {appConfig.name}
             </Text>
 
             <TextField
+              value={username}
+              onChange={e => {
+                const valor = e.target.value
+                setUsername(valor)
+              }}
               fullWidth
               textFieldColors={{
                 neutral: {
-                  textColor: appConfig.theme.colors.neutrals[100],
-                  mainColor: appConfig.theme.colors.neutrals[100],
-                  mainColorHighlight: appConfig.theme.colors.primary[100],
+                  textColor: appConfig.theme.colors.neutrals[200],
+                  mainColor: appConfig.theme.colors.neutrals[400],
+                  mainColorHighlight: appConfig.theme.colors.primary[400],
                   backgroundColor: appConfig.theme.colors.neutrals[800]
                 }
               }}
+              styleSheet={{
+                marginLeft: '5px'
+              }}
             />
+
             <Button
               type="submit"
               label="Entrar"
